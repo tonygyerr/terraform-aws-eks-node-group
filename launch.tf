@@ -10,7 +10,7 @@ resource "aws_launch_template" "this" {
   image_id      = var.ami_id
   # instance_type = var.launch_template_instance_type
   key_name  = var.key_name
-  # user_data = module.user_data.user_data
+  user_data = var.user_data_template_path #module.user_data.user_data
   vpc_security_group_ids = length(var.network_interfaces) > 0 ? [] : local.security_group_ids
 
   default_version         = var.launch_template_default_version
