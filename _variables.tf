@@ -495,3 +495,9 @@ variable "aws_iam_policy_document" {
   type        = string
   default     = null
 }
+
+variable "eks_cluster_oidc_issuer_url" {
+  description = "The URL on the EKS cluster for the OpenID Connect identity provider"
+  type        = string
+  default     = ""
+}

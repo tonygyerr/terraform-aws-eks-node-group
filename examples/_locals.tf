@@ -3,7 +3,7 @@ locals {
   aws_account_number      = local.enabled ? coalesce(data.aws_caller_identity.current.account_id) : ""
   aws_iam_policy_document = try(var.aws_iam_policy_document[0], tostring(var.aws_iam_policy_document), "{}")
   enabled                 = "true"
-  eks_cluster_oidc_issuer = module.eks.cluster_oidc_issuer_url #replace(var.eks_cluster_oidc_issuer_url, "https://", "")
+  eks_cluster_oidc_issuer = var.eks_cluster_oidc_issuer_url #module.eks.cluster_oidc_issuer_url 
   cluster_version         = "1.22"
   region                  = data.aws_region.current.name
   service_account_long_id = format("%v@%v", coalesce(var.service_account_name, "all"), coalesce(var.service_account_namespace, "all"))
