@@ -512,3 +512,8 @@ variable "aws_iam_policy_document" {
   type    = string
   default = null
 }
+
+variable "profile" {
+  description = "Enter name of profile"
+  default     = ""
+}

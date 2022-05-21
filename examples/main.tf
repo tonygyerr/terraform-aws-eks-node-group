@@ -2,6 +2,7 @@ module "eks_managed_node_group" {
   source  = "git::https://github.com/tonygyerr/terraform-aws-eks-node-group.git"
 
   app_name        = var.app_name
+  profile         = var.profile
   cluster_name    = "${var.app_name}-my-cluster"
   cluster_version = var.cluster_version
 
