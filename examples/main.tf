@@ -3,6 +3,7 @@ module "eks_managed_node_group" {
 
   app_name        = var.app_name
   profile         = var.profile
+  region          = var.aws_region
   cluster_name    = "${var.app_name}-my-cluster"
   cluster_version = var.cluster_version
 
